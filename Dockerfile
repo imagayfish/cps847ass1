@@ -4,12 +4,12 @@ RUN apt-get update
 RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
 
-ENV HOME /home
-COPY hello.py /home/hello.py
+ENV HOME /cps847ass1
+COPY hello.py /cps847ass1/hello.py
 STOPSIGNAL SIGTERM
-WORKDIR /home
+WORKDIR /cps847ass1
 
-COPY requirements.txt /home/requirements.txt
+COPY requirements.txt /cps847ass1/requirements.txt
 RUN pip3 install -r requirements.txt
 
 ENTRYPOINT ["python3"]
